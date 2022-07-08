@@ -24,17 +24,13 @@ class MainActivity : ComponentActivity() {
 
     @Inject
     lateinit var sharedPref: SharedPref
-
     private var pressBackExitJob: Job? = null
     private var backPressedOnce = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         WindowCompat.setDecorFitsSystemWindows(window, false)
-
         var isDarkMode by mutableStateOf(sharedPref.getDarkMode())
-
         setContent {
             AppTheme(
                 darkTheme = isDarkMode
@@ -44,7 +40,6 @@ class MainActivity : ComponentActivity() {
                         isDarkMode = isDarkMode,
                         turnOnDarkMode = { turnOn ->
                             isDarkMode = turnOn
-
                             sharedPref.setDarkMode(turnOn)
                         }
                     )
@@ -55,19 +50,14 @@ class MainActivity : ComponentActivity() {
         // Press double back to exit
         onBackPressedDispatcher.addCallback(this) {
             pressBackExitJob?.cancel()
-
             if (backPressedOnce) {
                 finish()
                 return@addCallback
             }
-
             toast("Please press back again to exit.")
-
             backPressedOnce = true
-
             pressBackExitJob = lifecycleScope.launch {
                 delay(500)
-
                 backPressedOnce = false
             }
         }

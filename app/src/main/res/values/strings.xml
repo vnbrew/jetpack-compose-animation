@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Jetpack Compose Animation</string>
 
+    <string name="dark_mode">Dark Mode</string>
+    <string name="light_mode">Light Mode</string>
     <!-- Start Configuration Strings -->
     <string name="default_notification_channel_id">default_notification_channel</string>
     <!-- End Configuration Strings -->

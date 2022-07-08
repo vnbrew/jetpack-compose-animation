@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
-import com.eru.animation.compose.ui.compositions.CustomSnackbarHost
+import com.eru.animation.compose.ui.compositions.CustomSnackBarHost
 import com.eru.animation.compose.ui.theme.AppTheme
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
@@ -19,7 +19,6 @@ fun MainScreen(
     turnOnDarkMode: (Boolean) -> Unit,
 ) {
     val systemUiController = rememberSystemUiController()
-
     SideEffect {
         systemUiController.setSystemBarsColor(
             color = Color.Transparent,
@@ -47,10 +46,9 @@ fun MainScreenSkeleton(
     turnOnDarkMode: (Boolean) -> Unit = {},
 ) {
     val navController = rememberNavController()
-
     Scaffold(
         modifier = Modifier.fillMaxSize(),
-        snackbarHost = { CustomSnackbarHost(it) },
+        snackbarHost = { CustomSnackBarHost(it) },
     ) {
         NavHostMain(
             modifier = Modifier,

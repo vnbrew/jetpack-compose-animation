@@ -20,9 +20,9 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun CustomSnackbarHost(state: SnackbarHostState) {
+fun CustomSnackBarHost(state: SnackbarHostState) {
     SnackbarHost(state) { data ->
-        CustomSnackbar(
+        CustomSnackBar(
             modifier = Modifier,
             snackbarData = data,
             backgroundColor = MaterialTheme.colors.onBackground,
@@ -34,7 +34,7 @@ fun CustomSnackbarHost(state: SnackbarHostState) {
  * This is a modified version of [Snackbar].
  */
 @Composable
-fun CustomSnackbar(
+fun CustomSnackBar(
     snackbarData: SnackbarData,
     modifier: Modifier = Modifier,
     actionOnNewLine: Boolean = false,

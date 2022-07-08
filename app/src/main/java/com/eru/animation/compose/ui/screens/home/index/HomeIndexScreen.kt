@@ -4,12 +4,10 @@ import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,15 +15,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.GridItemSpan
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Divider
 import androidx.compose.material.Icon
 import androidx.compose.material.LocalContentColor
 import androidx.compose.material.MaterialTheme
@@ -36,24 +31,18 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import com.eru.animation.compose.BuildConfig
 import com.eru.animation.compose.R
 import com.eru.animation.compose.ui.screens.Screen
 import com.eru.animation.compose.ui.theme.AppTheme
 import com.eru.animation.compose.ui.theme.TailwindCSSColor
-import com.eru.animation.compose.utils.extensions.openUrl
 import com.eru.animation.compose.utils.extensions.shadow
 import com.google.accompanist.insets.navigationBarsWithImePadding
 import com.google.accompanist.insets.statusBarsHeight
@@ -91,16 +80,15 @@ fun HomeIndexScreen(
     navigate: (Screen) -> Unit = {},
     turnOnDarkMode: (Boolean) -> Unit = {},
 ) {
-    val context = LocalContext.current
-
     val isDark = !MaterialTheme.colors.isLight
     val (darkModeState, onDarkModeStateChange) = remember { mutableStateOf(isDark) }
 
     Scaffold(
-        Modifier
-            .navigationBarsWithImePadding()
+        modifier = Modifier.navigationBarsWithImePadding()
     ) {
-        Column(Modifier.fillMaxSize()) {
+        Column(
+            modifier = Modifier.fillMaxSize()
+        ) {
             Box(
                 modifier = Modifier.weight(1f)
             ) {
@@ -114,41 +102,33 @@ fun HomeIndexScreen(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalAlignment = Alignment.CenterHorizontally,
                         ) {
-                            Spacer(Modifier.statusBarsHeight())
-
+                            Spacer(modifier = Modifier.statusBarsHeight())
                             Text(
                                 modifier = Modifier
                                     .padding(
                                         start = 16.dp,
                                         top = 32.dp,
-                                        end = 16.dp
+                                        end = 16.dp,
+                                        bottom = 32.dp
                                     )
                                     .fillMaxWidth(),
                                 text = stringResource(id = R.string.app_name),
                                 style = MaterialTheme.typography.h1,
                                 textAlign = TextAlign.Center,
                             )
-
-                            Text(
-                                modifier = Modifier
-                                    .padding(
-                                        start = 16.dp,
-                                        top = 4.dp,
-                                        end = 16.dp,
-                                        bottom = 32.dp
-                                    ),
-                                text = "Version ${BuildConfig.VERSION_NAME}",
-                                textAlign = TextAlign.Center,
-                                fontSize = 12.sp,
-                            )
                         }
                     }
 
                     item {
                         ModuleButton(
-                            name = if (isDark) "Dark Mode" else "Light Mode",
-                            icon = if (isDark) R.drawable.ic_moon_stars
-                            else R.drawable.ic_brightness_high,
+                            name = if (isDark)
+                                stringResource(id = R.string.dark_mode)
+                            else
+                                stringResource(id = R.string.light_mode),
+                            icon = if (isDark)
+                                R.drawable.ic_moon_stars
+                            else
+                                R.drawable.ic_brightness_high,
                             color = TailwindCSSColor.Green500,
                             onClick = {
                                 onDarkModeStateChange(!darkModeState)
@@ -181,67 +161,6 @@ fun HomeIndexScreen(
                             )
                         )
                 )
-            }
-
-            Row(
-                Modifier
-                    .fillMaxWidth()
-                    .padding(top = 16.dp, bottom = 12.dp),
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                Column(
-                    Modifier
-                        .weight(1f),
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(
-                        text = "Developed By —",
-                        fontSize = 12.sp,
-                        color = MaterialTheme.colors.onBackground.copy(.75f)
-                    )
-
-                    Text(
-                        modifier = Modifier
-                            .clip(RoundedCornerShape(8.dp))
-                            .clickable {
-                                context.openUrl("https://imaginativeshohag.github.io/")
-                            }
-                            .padding(4.dp),
-                        text = "@ImaginativeShohag",
-                        fontSize = 14.sp,
-                        fontWeight = FontWeight.Bold
-                    )
-                }
-
-                Divider(
-                    Modifier
-                        .width(1.dp)
-                        .height(24.dp)
-                )
-
-                Column(
-                    Modifier
-                        .weight(1f),
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(
-                        text = "Source Code —",
-                        fontSize = 12.sp,
-                        color = MaterialTheme.colors.onBackground.copy(.75f)
-                    )
-
-                    Text(
-                        modifier = Modifier
-                            .clip(RoundedCornerShape(8.dp))
-                            .clickable {
-                                context.openUrl("https://github.com/ImaginativeShohag/Why-Not-Compose")
-                            }
-                            .padding(4.dp),
-                        text = "GitHub",
-                        fontSize = 14.sp,
-                        fontWeight = FontWeight.Bold
-                    )
-                }
             }
         }
     }

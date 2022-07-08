@@ -50,12 +50,10 @@ fun SplashScreen(
 
     LaunchedEffect(Unit) {
         delay(3000)
-
         gotoHomeIndex()
     }
 
     Scaffold {
-
         BoxWithConstraints(Modifier.fillMaxSize()) {
             with(density) {
                 val maxWidth = maxWidth
@@ -63,7 +61,6 @@ fun SplashScreen(
 
                 for (i in 0..50) {
                     var state by remember { mutableStateOf(false) }
-
                     LaunchedEffect(Unit) {
                         delay(Random.nextLong(300, 5000))
                         state = true
@@ -168,7 +165,7 @@ fun SplashScreen(
                         scaleX = animScale
                         scaleY = animScale
                     },
-                painter = painterResource(id = R.drawable.ic_jetpack_compose_logo),
+                painter = painterResource(id = R.drawable.ic_splash),
                 contentDescription = stringResource(id = R.string.app_name)
             )
 
