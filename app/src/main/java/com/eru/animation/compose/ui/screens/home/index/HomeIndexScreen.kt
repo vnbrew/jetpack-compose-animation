@@ -94,7 +94,7 @@ fun HomeIndexScreen(
             ) {
                 LazyVerticalGrid(
                     modifier = Modifier.fillMaxSize(),
-                    cells = GridCells.Fixed(2),
+                    cells = GridCells.Fixed(1),
                     contentPadding = PaddingValues(24.dp, 8.dp, 24.dp, 24.dp)
                 ) {
                     item(span = { GridItemSpan(maxCurrentLineSpan) }) {
@@ -195,7 +195,7 @@ fun ModuleButton(
         Column(
             Modifier
                 .fillMaxWidth()
-                .aspectRatio(1f),
+                .aspectRatio(3f),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
         ) {

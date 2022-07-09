@@ -35,10 +35,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
-/**
- * Emudi is a trademark of Softzino Technologies (softzino.com).
- */
-
 @Composable
 fun EmudiScreen() {
     val animState = MutableStateFlow(false)

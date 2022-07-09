@@ -49,7 +49,7 @@ fun AnimationIndexSkeleton(
     ) {
 
         Column(Modifier.fillMaxSize()) {
-            Header("Compositions")
+            Header("Animations")
 
             LazyColumn(Modifier.fillMaxSize()) {
 

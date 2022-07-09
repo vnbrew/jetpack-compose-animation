@@ -39,10 +39,6 @@ import com.eru.animation.compose.ui.theme.AppTheme
 import com.eru.animation.compose.ui.theme.composeThemeColor
 import kotlinx.coroutines.delay
 
-// This animation is inspired by the video:
-// "Compose Multiplatform Alpha: The Story"
-// Link: https://www.youtube.com/watch?v=MiXkDyxEDJI
-
 @Composable
 fun TheStoryScreen() {
     TheStoryScreenSkeleton()

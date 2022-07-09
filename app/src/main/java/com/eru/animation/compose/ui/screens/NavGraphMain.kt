@@ -12,7 +12,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.eru.animation.compose.models.MapPlace
+import com.eru.animation.compose.ui.screens.animation.animatedcontent.AnimatedContentScreen
+import com.eru.animation.compose.ui.screens.animation.animatedvisibility.AnimatedVisibilityScreen
+import com.eru.animation.compose.ui.screens.animation.composeone.ComposeOneScreen
+import com.eru.animation.compose.ui.screens.animation.emudi.EmudiScreen
 import com.eru.animation.compose.ui.screens.animation.index.AnimationIndexScreen
+import com.eru.animation.compose.ui.screens.animation.runningcar.RunningCarScreen
+import com.eru.animation.compose.ui.screens.animation.thestory.TheStoryScreen
 import com.eru.animation.compose.ui.screens.home.index.HomeIndexScreen
 import com.eru.animation.compose.ui.screens.home.splash.SplashScreen
 import com.eru.animation.compose.utils.extensions.getJsonFromObj
@@ -32,6 +38,8 @@ sealed class HomeScreen(val route: String) {
 
 sealed class AnimationsScreen(val route: String) {
     object AnimationIndex : AnimationsScreen("animation/index")
+    object AnimationUsingAnimatedVisibility : AnimationsScreen("animation/animatedvisibility")
+    object AnimationUsingAnimatedContent : AnimationsScreen("animation/animatedcontent")
     object AnimationComposeOne : AnimationsScreen("animation/composeone")
     object AnimationEmudi : AnimationsScreen("animation/emudi")
     object AnimationRunningCar : AnimationsScreen("animation/runningcar")
@@ -179,24 +187,30 @@ private fun NavGraphBuilder.addAnimationScreens(
         addAnimationIndexScreen(
             navController = navController
         )
+        composable(AnimationsScreen.AnimationUsingAnimatedVisibility.route) {
+            AnimatedVisibilityScreen()
+        }
+        composable(AnimationsScreen.AnimationUsingAnimatedContent.route) {
+            AnimatedContentScreen()
+        }
 
         // Below compositions will be just few lines.
         // So, we will not use functions for those.
-//        composable(AnimationsScreen.AnimationComposeOne.route) {
-//            ComposeOneScreen()
-//        }
-//
-//        composable(AnimationsScreen.AnimationEmudi.route) {
-//            EmudiScreen()
-//        }
-//
-//        composable(AnimationsScreen.AnimationRunningCar.route) {
-//            RunningCarScreen()
-//        }
-//
-//        composable(AnimationsScreen.AnimationTheStory.route) {
-//            TheStoryScreen()
-//        }
+        composable(AnimationsScreen.AnimationComposeOne.route) {
+            ComposeOneScreen()
+        }
+
+        composable(AnimationsScreen.AnimationEmudi.route) {
+            EmudiScreen()
+        }
+
+        composable(AnimationsScreen.AnimationRunningCar.route) {
+            RunningCarScreen()
+        }
+
+        composable(AnimationsScreen.AnimationTheStory.route) {
+            TheStoryScreen()
+        }
     }
 }
 
