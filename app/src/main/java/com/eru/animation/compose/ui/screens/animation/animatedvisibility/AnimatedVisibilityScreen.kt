@@ -121,15 +121,14 @@ fun AnimatedVisibilityScreenSkeleton(
             .statusBarsPadding()
     ) {
         Column(
-            Modifier
-                .fillMaxSize()
+            Modifier.fillMaxSize()
         ) {
-            AppComponent.Header("AnimatedVisibility")
+            AppComponent.Header("Swipe Dismiss Animation")
 
             Divider()
 
             LazyColumn(
-                Modifier
+                modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f),
                 contentPadding = PaddingValues(start = 16.dp, end = 16.dp)
@@ -195,7 +194,7 @@ fun AnimatedVisibilityScreenSkeleton(
                                     EndToStart -> Icons.Default.Delete
                                 }
                                 val scale by animateFloatAsState(
-                                    if (dismissState.targetValue == Default) 0.75f else 1f
+                                    targetValue = if (dismissState.targetValue == Default) 0.75f else 1f
                                 )
 
                                 Box(

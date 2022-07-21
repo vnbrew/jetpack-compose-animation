@@ -9,27 +9,27 @@ data class Animation(
     companion object {
         val animationList = listOf(
             Animation(
-                name = "AnimatedVisibility",
+                name = "Example 1",
                 route = AnimationsScreen.AnimationUsingAnimatedVisibility,
             ),
             Animation(
-                name = "AnimatedContent",
+                name = "Example 2",
                 route = AnimationsScreen.AnimationUsingAnimatedContent,
             ),
             Animation(
-                name = "Animated Text & Bubbles",
+                name = "Example 3",
                 route = AnimationsScreen.AnimationComposeOne,
             ),
             Animation(
-                name = "Emudi",
+                name = "Example 4",
                 route = AnimationsScreen.AnimationEmudi,
             ),
             Animation(
-                name = "Running Car",
+                name = "Example 5",
                 route = AnimationsScreen.AnimationRunningCar,
             ),
             Animation(
-                name = "The Story",
+                name = "Example 6",
                 route = AnimationsScreen.AnimationTheStory,
             ),
         )

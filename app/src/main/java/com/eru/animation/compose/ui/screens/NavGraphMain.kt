@@ -26,9 +26,9 @@ import com.eru.animation.compose.utils.extensions.getJsonFromObj
 sealed class Screen(val route: String) {
     object Home : Screen("home")
     object Animations : Screen("animation")
-    object Compositions : Screen("composition")
-    object UIs : Screen("ui")
-    object Tutorials : Screen("tutorial")
+//    object Compositions : Screen("composition")
+//    object UIs : Screen("ui")
+//    object Tutorials : Screen("tutorial")
 }
 
 sealed class HomeScreen(val route: String) {
@@ -191,7 +191,7 @@ private fun NavGraphBuilder.addAnimationScreens(
             AnimatedVisibilityScreen()
         }
         composable(AnimationsScreen.AnimationUsingAnimatedContent.route) {
-            AnimatedContentScreen()
+            AnimatedContentScreen {}
         }
 
         // Below compositions will be just few lines.
@@ -217,250 +217,250 @@ private fun NavGraphBuilder.addAnimationScreens(
 private fun NavGraphBuilder.addCompositionScreens(
     navController: NavHostController,
 ) {
-    navigation(
-        route = Screen.Compositions.route,
-        startDestination = CompositionsScreen.CompositionIndex.route
-    ) {
-        addCompositionIndexScreen(
-            navController = navController
-        )
-
-        // Below compositions will be just few lines.
-        // So, we will not use functions for those.
-//        composable(CompositionsScreen.CompositionAppBar.route) {
-//            AppBarScreen()
-//        }
+//    navigation(
+//        route = Screen.Compositions.route,
+//        startDestination = CompositionsScreen.CompositionIndex.route
+//    ) {
+//        addCompositionIndexScreen(
+//            navController = navController
+//        )
 //
-//        composable(CompositionsScreen.CompositionButton.route) {
-//            ButtonScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionCard.route) {
-//            CardScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionCheckBox.route) {
-//            CheckBoxScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionDialog.route) {
-//            DialogScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionDropDownMenu.route) {
-//            DropDownMenuScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionListIndex.route) {
-//            ListIndexScreen(
-//                navigate = { screen ->
-//                    navController.navigate(screen.route)
-//                },
-//            )
-//        }
-//
-//        composable(CompositionsScreen.CompositionListColumn.route) {
-//            ListColumnScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionListRow.route) {
-//            ListRowScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionListLazyColumnIndex.route) {
-//            LazyColumnIndexScreen(
-//                navigate = { screen ->
-//                    navController.navigate(screen.route)
-//                },
-//            )
-//        }
-//
-//        composable(CompositionsScreen.CompositionListLazyColumnOne.route) {
-//            LazyColumnSampleOneScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionListLazyColumnTwo.route) {
-//            LazyColumnSampleTwoScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionListLazyRow.route) {
-//            LazyRowScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionListGridVertical.route) {
-//            LazyVerticalGridScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionListItem.route) {
-//            ListItemScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionLoadingIndicator.route) {
-//            LoadingIndicatorScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionRadioButton.route) {
-//            RadioButtonScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionScaffoldIndex.route) {
-//            ScaffoldIndexScreen(
-//                navigate = { screen ->
-//                    navController.navigate(screen.route)
-//                },
-//            )
-//        }
-//
-//        composable(CompositionsScreen.CompositionScaffoldOne.route) {
-//            SimpleScaffoldWithTopBarScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionScaffoldTwo.route) {
-//            ScaffoldWithBottomBarAndCutoutScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionScaffoldThree.route) {
-//            ScaffoldWithSimpleSnackbarScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionScaffoldFour.route) {
-//            ScaffoldWithCustomSnackbarScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionScaffoldFive.route) {
-//            ScaffoldWithCoroutinesSnackbarScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionSnackbar.route) {
-//            SnackbarScreen(
-//                navigate = { route ->
-//                    navController.navigate(route)
-//                }
-//            )
-//        }
-//
-//        composable(CompositionsScreen.CompositionSwitch.route) {
-//            SwitchScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionTextField.route) {
-//            TextFieldScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionSwipeToDismiss.route) {
-//            SwipeToDismissScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionSwipeRefresh.route) {
-//            SwipeRefreshScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionBadge.route) {
-//            BadgeScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionFloatingActionButton.route) {
-//            FloatingActionButtonScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionSlider.route) {
-//            SliderScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionText.route) {
-//            TextScreen()
-//        }
-//
-//        composable(CompositionsScreen.CompositionBottomNavigation.route) {
-//            BottomNavigationScreen()
-//        }
-    }
+//        // Below compositions will be just few lines.
+//        // So, we will not use functions for those.
+////        composable(CompositionsScreen.CompositionAppBar.route) {
+////            AppBarScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionButton.route) {
+////            ButtonScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionCard.route) {
+////            CardScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionCheckBox.route) {
+////            CheckBoxScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionDialog.route) {
+////            DialogScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionDropDownMenu.route) {
+////            DropDownMenuScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionListIndex.route) {
+////            ListIndexScreen(
+////                navigate = { screen ->
+////                    navController.navigate(screen.route)
+////                },
+////            )
+////        }
+////
+////        composable(CompositionsScreen.CompositionListColumn.route) {
+////            ListColumnScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionListRow.route) {
+////            ListRowScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionListLazyColumnIndex.route) {
+////            LazyColumnIndexScreen(
+////                navigate = { screen ->
+////                    navController.navigate(screen.route)
+////                },
+////            )
+////        }
+////
+////        composable(CompositionsScreen.CompositionListLazyColumnOne.route) {
+////            LazyColumnSampleOneScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionListLazyColumnTwo.route) {
+////            LazyColumnSampleTwoScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionListLazyRow.route) {
+////            LazyRowScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionListGridVertical.route) {
+////            LazyVerticalGridScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionListItem.route) {
+////            ListItemScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionLoadingIndicator.route) {
+////            LoadingIndicatorScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionRadioButton.route) {
+////            RadioButtonScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionScaffoldIndex.route) {
+////            ScaffoldIndexScreen(
+////                navigate = { screen ->
+////                    navController.navigate(screen.route)
+////                },
+////            )
+////        }
+////
+////        composable(CompositionsScreen.CompositionScaffoldOne.route) {
+////            SimpleScaffoldWithTopBarScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionScaffoldTwo.route) {
+////            ScaffoldWithBottomBarAndCutoutScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionScaffoldThree.route) {
+////            ScaffoldWithSimpleSnackbarScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionScaffoldFour.route) {
+////            ScaffoldWithCustomSnackbarScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionScaffoldFive.route) {
+////            ScaffoldWithCoroutinesSnackbarScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionSnackbar.route) {
+////            SnackbarScreen(
+////                navigate = { route ->
+////                    navController.navigate(route)
+////                }
+////            )
+////        }
+////
+////        composable(CompositionsScreen.CompositionSwitch.route) {
+////            SwitchScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionTextField.route) {
+////            TextFieldScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionSwipeToDismiss.route) {
+////            SwipeToDismissScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionSwipeRefresh.route) {
+////            SwipeRefreshScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionBadge.route) {
+////            BadgeScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionFloatingActionButton.route) {
+////            FloatingActionButtonScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionSlider.route) {
+////            SliderScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionText.route) {
+////            TextScreen()
+////        }
+////
+////        composable(CompositionsScreen.CompositionBottomNavigation.route) {
+////            BottomNavigationScreen()
+////        }
+//    }
 }
 
 private fun NavGraphBuilder.addUiScreens(
     navController: NavHostController,
 ) {
-    navigation(
-        route = Screen.UIs.route,
-        startDestination = UIsScreen.UiIndex.route
-    ) {
-        addUiIndexScreen(
-            navController = navController
-        )
-
-        // Below compositions will be just few lines.
-        // So, we will not use functions for those.
-//        composable(UIsScreen.UiWebView.route) {
-//            val viewModel: WebViewViewModel = hiltViewModel()
+//    navigation(
+//        route = Screen.UIs.route,
+//        startDestination = UIsScreen.UiIndex.route
+//    ) {
+//        addUiIndexScreen(
+//            navController = navController
+//        )
 //
-//            WebViewScreen(
-//                viewModel = viewModel,
-//                target = WebViewTarget.AboutMe,
-//                goBack = {
-//                    navController.popBackStack()
-//                }
-//            )
-//        }
-//
-//        composable(UIsScreen.UiMapView.route) {
-//            val viewModel: MapViewModel = hiltViewModel()
-//
-//            MapScreen(
-//                viewModel = viewModel,
-//                goBack = {
-//                    navController.popBackStack()
-//                },
-//                gotoDetailsScreen = { item ->
-//                    navController.navigate(UIsScreen.UiMapViewDetails.createRoute(item))
-//                }
-//            )
-//        }
-//
-//        composable(UIsScreen.UiMapViewDetails.route) { backStackEntry ->
-//            backStackEntry.arguments?.let { args ->
-//                val item = args.getString(UIsScreen.UiMapViewDetails.PARAM_ITEM)
-//                    .getObjFromJson<MapPlace>() ?: throw Exception("Item cannot be null!")
-//
-//                MapViewDetailsScreen(
-//                    item = item,
-//                    goBack = {
-//                        navController.popBackStack()
-//                    }
-//                )
-//            }
-//        }
-//
-//        composable(UIsScreen.UiOtpCodeVerify.route) {
-//            val viewModel: OtpCodeVerifyViewModel = hiltViewModel()
-//
-//            OtpCodeVerifyScreen(
-//                viewModel = viewModel,
-//                phoneNumber = "+8801234567891",
-//                goBack = {
-//                    navController.popBackStack()
-//                }
-//            )
-//        }
-    }
+//        // Below compositions will be just few lines.
+//        // So, we will not use functions for those.
+////        composable(UIsScreen.UiWebView.route) {
+////            val viewModel: WebViewViewModel = hiltViewModel()
+////
+////            WebViewScreen(
+////                viewModel = viewModel,
+////                target = WebViewTarget.AboutMe,
+////                goBack = {
+////                    navController.popBackStack()
+////                }
+////            )
+////        }
+////
+////        composable(UIsScreen.UiMapView.route) {
+////            val viewModel: MapViewModel = hiltViewModel()
+////
+////            MapScreen(
+////                viewModel = viewModel,
+////                goBack = {
+////                    navController.popBackStack()
+////                },
+////                gotoDetailsScreen = { item ->
+////                    navController.navigate(UIsScreen.UiMapViewDetails.createRoute(item))
+////                }
+////            )
+////        }
+////
+////        composable(UIsScreen.UiMapViewDetails.route) { backStackEntry ->
+////            backStackEntry.arguments?.let { args ->
+////                val item = args.getString(UIsScreen.UiMapViewDetails.PARAM_ITEM)
+////                    .getObjFromJson<MapPlace>() ?: throw Exception("Item cannot be null!")
+////
+////                MapViewDetailsScreen(
+////                    item = item,
+////                    goBack = {
+////                        navController.popBackStack()
+////                    }
+////                )
+////            }
+////        }
+////
+////        composable(UIsScreen.UiOtpCodeVerify.route) {
+////            val viewModel: OtpCodeVerifyViewModel = hiltViewModel()
+////
+////            OtpCodeVerifyScreen(
+////                viewModel = viewModel,
+////                phoneNumber = "+8801234567891",
+////                goBack = {
+////                    navController.popBackStack()
+////                }
+////            )
+////        }
+//    }
 }
 
 private fun NavGraphBuilder.addTutorialScreens(
     navController: NavHostController,
 ) {
-    navigation(
-        route = Screen.Tutorials.route,
-        startDestination = TutorialsScreen.TutorialIndex.route
-    ) {
-        addTutorialIndexScreen(
-            navController = navController
-        )
-
-        // Below compositions will be just few lines.
-        // So, we will not use functions for those.
-//        composable(TutorialsScreen.xyz.route) {
-//            BlankScreen()
-//        }
-    }
+//    navigation(
+//        route = Screen.Tutorials.route,
+//        startDestination = TutorialsScreen.TutorialIndex.route
+//    ) {
+//        addTutorialIndexScreen(
+//            navController = navController
+//        )
+//
+//        // Below compositions will be just few lines.
+//        // So, we will not use functions for those.
+////        composable(TutorialsScreen.xyz.route) {
+////            BlankScreen()
+////        }
+//    }
 }
 
 // ================================================================

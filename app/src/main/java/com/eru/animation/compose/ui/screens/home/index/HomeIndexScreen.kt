@@ -54,24 +54,24 @@ private val menuItems = listOf(
         color = TailwindCSSColor.Yellow500,
         route = Screen.Animations
     ),
-    MenuItem(
-        name = "Compositions",
-        icon = R.drawable.ic_round_widgets_24,
-        color = TailwindCSSColor.Red500,
-        route = Screen.Compositions
-    ),
-    MenuItem(
-        name = "UIs",
-        icon = R.drawable.ic_round_grid_view_24,
-        color = TailwindCSSColor.Blue500,
-        route = Screen.UIs
-    ),
-    MenuItem(
-        name = "Tutorials",
-        icon = R.drawable.ic_round_sticky_note_2_24,
-        color = TailwindCSSColor.Purple500,
-        route = Screen.Tutorials
-    ),
+//    MenuItem(
+//        name = "Compositions",
+//        icon = R.drawable.ic_round_widgets_24,
+//        color = TailwindCSSColor.Red500,
+//        route = Screen.Compositions
+//    ),
+//    MenuItem(
+//        name = "UIs",
+//        icon = R.drawable.ic_round_grid_view_24,
+//        color = TailwindCSSColor.Blue500,
+//        route = Screen.UIs
+//    ),
+//    MenuItem(
+//        name = "Tutorials",
+//        icon = R.drawable.ic_round_sticky_note_2_24,
+//        color = TailwindCSSColor.Purple500,
+//        route = Screen.Tutorials
+//    ),
 )
 
 @ExperimentalFoundationApi

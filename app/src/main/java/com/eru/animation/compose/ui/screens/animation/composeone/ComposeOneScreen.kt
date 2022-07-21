@@ -175,11 +175,11 @@ fun ComposeOneScreen() {
                         scaleY = animScale
                     },
                 painter = painterResource(id = R.drawable.ic_jetpack_compose_logo),
-                contentDescription = "Why Not Compose!"
+                contentDescription = "Jetpack Compose Animations"
             )
 
             AnimatedText(
-                text = "Why Not Compose!",
+                text = "Jetpack Compose Animations!",
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(start = 16.dp, top = 16.dp, end = 16.dp)

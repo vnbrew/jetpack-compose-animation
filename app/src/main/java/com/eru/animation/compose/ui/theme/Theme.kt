@@ -55,3 +55,23 @@ fun AppTheme(
         content = content
     )
 }
+
+@Composable
+fun OverlayTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
+    MaterialTheme(
+        colors = if (darkTheme) DarkColorPalette else LightColorPalette,
+        typography = Typography,
+        shapes = Shapes,
+        content = content
+    )
+}
+
+@Composable
+fun ButtonTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
+    MaterialTheme(
+        colors = if (darkTheme) DarkColorPalette else LightColorPalette,
+        typography = Typography,
+        shapes = Shapes,
+        content = content
+    )
+}
